@@ -1,0 +1,20 @@
+{
+  "name": "rTorrent behind OpenVPN (Flood)",
+  "plugin_schema": "2",
+  "release": "11.2-RELEASE",
+  "artifact": "https://github.com/pierrickrouxel/iocage-rtorrent-flood-openvpn.git",
+  "pkgs": [
+    "rtorrent",
+    "openvpn",
+    "git",
+    "node",
+    "npm"
+  ],
+  "properties": {
+    "allow_raw_sockets": "1",
+    "vnet": "on",
+    "allow_tun": "1"
+  },
+  "packagesite": "http://pkg.FreeBSD.org/FreeBSD:11:amd64/latest",
+  "official": false
+}
