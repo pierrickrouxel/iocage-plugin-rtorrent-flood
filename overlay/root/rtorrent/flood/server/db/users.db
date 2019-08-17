@@ -1,0 +1,2 @@
+{"username":"admin","password":"$argon2i$v=19$m=4096,t=3,p=1$L+oa0mwzFPsRoWIe88VgYA$uaallIbb4r8Ot9tq1cGv/4YeMN2VkA/yEVmLhTF9oQs","socketPath":"/usr/local/etc/rtorrent/session/rtorrent.sock","isAdmin":true,"_id":"QR3TTnb3qg5SOTZX"}
+{"$$indexCreated":{"fieldName":"username","unique":true,"sparse":false}}
