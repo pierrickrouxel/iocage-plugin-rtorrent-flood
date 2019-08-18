@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# PROVIDE: rtorrent-flood
+# REQUIRE: rTorrent
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="rtorrent_flood"
+desc="rTorrent Flood Daemon"
+rcvar="rtorrent_flood_enable"
+forever="/usr/local/bin/node /usr/local/bin/forever"
+workdir="/usr/local/etc/rtorrent/flood"
+script="server/bin/start.js"
+
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+
+rtorrent_flood_start() {
+  NODE_ENV=production
+  su -m root -c "exec ${forever} start -a -l ${workdir}/forever.log -o ${workdir}/output.log -e ${workdir}/error.log -p /var/run/forever --sourceDir ${workdir} ${script}"
+}
+
+rtorrent_flood_stop() {
+  su -m root -c "exec ${forever} --sourceDir ${workdir} stop ${script}"
+}
+
+load_rc_config $name
+run_rc_command "$1"

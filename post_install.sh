@@ -1,8 +1,14 @@
 #!/bin/sh
 
+npm install -g forever
+
 # rTorrent startup script
 chmod 555 /usr/local/etc/rc.d/rtorrent
 sysrc -f /etc/rc.conf rtorrent_enable="YES"
+
+# rTorrent Flood startup script
+chmod 555 /usr/local/etc/rc.d/rtorrent_flood
+sysrc -f /etc/rc.conf rtorrent_flood_enable="YES"
 
 # Create flood folder
 mkdir -p /usr/local/etc/rtorrent/flood
@@ -18,5 +24,9 @@ npm install
 npm run build
 
 # Start the service
-rtorrent &
-npm start
+service rtorrent start
+service rtorrent_flood start
+
+echo "Flood ui credentials" > /root/PLUGIN_INFO
+echo "User: admin" >> /root/PLUGIN_INFO
+echo "Password: admin" >> /root/PLUGIN_INFO
