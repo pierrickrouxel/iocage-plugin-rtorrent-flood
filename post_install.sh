@@ -11,14 +11,14 @@ chmod 555 /usr/local/etc/rc.d/rtorrent_flood
 sysrc -f /etc/rc.conf rtorrent_flood_enable="YES"
 
 # Create flood folder
-mkdir -p /usr/local/etc/rtorrent/flood
-chmod 755 /usr/local/etc/rtorrent/flood
+mkdir -p /usr/local/etc/rtorrent
+chmod 755 /usr/local/etc/rtorrent
 cd /usr/local/etc/rtorrent || exit 1
 
 # Download sources
 git clone https://github.com/Flood-UI/flood.git
 cd flood || exit 1
-mv -rf /root/rtorrent/flood/* .
+cp -rf /root/rtorrent/flood/* .
 
 npm install
 npm run build
