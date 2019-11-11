@@ -18,11 +18,11 @@ stop_cmd="${name}_stop"
 
 rtorrent_flood_start() {
   NODE_ENV=production
-  su -m root -c "exec ${forever} start -a -l ${workdir}/forever.log -o ${workdir}/output.log -e ${workdir}/error.log -p /var/run/forever --workingDir ${workdir} --sourceDir ${workdir} ${script}"
+  su - root -c "exec ${forever} start -a -l ${workdir}/forever.log -o ${workdir}/output.log -e ${workdir}/error.log -p /var/run/forever --workingDir ${workdir} --sourceDir ${workdir} ${script}"
 }
 
 rtorrent_flood_stop() {
-  su -m root -c "exec ${forever} --workingDir ${workdir} --sourceDir ${workdir} stop ${script}"
+  su - root -c "exec ${forever} --workingDir ${workdir} --sourceDir ${workdir} stop ${script}"
 }
 
 load_rc_config $name

@@ -1,0 +1,20 @@
+#!/bin/bash
+# Flush out the list before we begin
+ipfw -q -f flush
+
+# Set rules command prefix
+cmd="ipfw -q add"
+vpn="tun0"
+
+# allow all local traffic on the loopback interface
+$cmd 00001 allow all from any to any via lo0
+
+# allow any connection to/from VPN interface
+$cmd 00010 allow all from any to any via $vpn
+
+# allow connection to/from LAN by rTorrent
+$cmd 00101 allow all from me to 192.168.1.0/24 uid rtorrent
+$cmd 00102 allow all from 192.168.1.0/24 to me uid rtorrent
+
+# deny any rTorrent connection outside LAN that does not use VPN
+$cmd 00103 deny all from any to any uid rtorrent

@@ -20,10 +20,10 @@ const CONFIG = {
   // To listen on all interfaces, change to `floodServerHost: '0.0.0.0'`..
   floodServerHost: '0.0.0.0',
   // The port that Flood should listen for web connections on.
-  floodServerPort: 3000,
+  floodServerPort: 80,
   // Used for development. See the "Local Development" section of README.md
   // for detail.
-  floodServerProxy: 'http://127.0.0.1:3000',
+  floodServerProxy: 'http://127.0.0.1:80',
   // Flood keeps a history of torrent download and upload speeds.
   // This value dictates the number of individual records per period to keep.
   maxHistoryStates: 30,
