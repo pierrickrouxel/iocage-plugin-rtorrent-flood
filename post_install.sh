@@ -1,6 +1,6 @@
 #!/bin/sh
 
-pw useradd rtorrent -d /root -g 0
+# pw useradd rtorrent -d /root -g 0
 
 npm install -g forever
 
@@ -14,7 +14,6 @@ sysrc -f /etc/rc.conf rtorrent_flood_enable="YES"
 
 # Create flood folder
 mkdir -p /usr/local/etc/rtorrent
-chown rtorrent /usr/local/etc/rtorrent
 cd /usr/local/etc/rtorrent || exit 1
 
 # Download sources
