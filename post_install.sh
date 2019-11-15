@@ -1,6 +1,8 @@
 #!/bin/sh
 
-# pw useradd rtorrent -d /root -g 0
+pw useradd rtorrent -g 0 -m
+
+mv /root/.rtorrent.rc /home/rtorrent/.rtorrent.rc
 
 npm install -g forever
 
@@ -13,13 +15,14 @@ chmod 555 /usr/local/etc/rc.d/rtorrent_flood
 sysrc -f /etc/rc.conf rtorrent_flood_enable="YES"
 
 # Create flood folder
-mkdir -p /usr/local/etc/rtorrent
-cd /usr/local/etc/rtorrent || exit 1
+cd /home/rtorrent || exit 1
 
 # Download sources
 git clone https://github.com/Flood-UI/flood.git
 cd flood || exit 1
 cp -rf /root/rtorrent/flood/* .
+
+chown -R rtorrent /home/rtorrent
 
 npm install
 npm run build

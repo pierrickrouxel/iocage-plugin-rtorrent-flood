@@ -4,7 +4,7 @@ Artifact file(s) for rTorrent Flood iocage plugin.
 
 ## rTorrent
 
-Download directory: `/usr/local/etc/rtorrent/download`.
+Download directory: `/home/rtorrent/download`.
 
 ## Flood
 

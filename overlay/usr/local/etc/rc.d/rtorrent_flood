@@ -10,7 +10,7 @@ name="rtorrent_flood"
 desc="rTorrent Flood Daemon"
 rcvar="rtorrent_flood_enable"
 forever="/usr/local/bin/node /usr/local/bin/forever"
-workdir="/usr/local/etc/rtorrent/flood"
+workdir="/home/rtorrent/flood"
 script="server/bin/start.js"
 
 start_cmd="${name}_start"
