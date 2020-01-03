@@ -36,7 +36,7 @@ const CONFIG = {
     host: '127.0.0.1',
     port: 5000,
     socket: true,
-    socketPath: '/config/rtorrent/session/rpc.socket'
+    socketPath: '/home/rtorrent/session/rtorrent.sock'
   },
   // Configuration for SSL, if using SSL with the Flood service directly.
   ssl: false,
