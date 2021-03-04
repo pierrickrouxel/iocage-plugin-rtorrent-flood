@@ -5,7 +5,6 @@ pw useradd rtorrent -g 0 -m
 mv /root/.rtorrent.rc /home/rtorrent/.rtorrent.rc
 
 npm install -g forever
-npm install -g node-gyp@7.1.2
 
 # rTorrent startup script
 chmod 555 /usr/local/etc/rc.d/rtorrent
@@ -19,7 +18,7 @@ sysrc -f /etc/rc.conf rtorrent_flood_enable="YES"
 cd /home/rtorrent || exit 1
 
 # Download sources
-git clone https://github.com/Flood-UI/flood.git
+git clone https://github.com/jesec/flood
 cd flood || exit 1
 cp -rf /root/rtorrent/flood/* .
 
