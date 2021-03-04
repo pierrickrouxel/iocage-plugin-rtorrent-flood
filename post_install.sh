@@ -5,7 +5,7 @@ pw useradd rtorrent -g 0 -m
 mv /root/.rtorrent.rc /home/rtorrent/.rtorrent.rc
 
 npm install -g forever
-npm install node-gyp@7.1.2
+npm install -g node-gyp@7.1.2
 
 # rTorrent startup script
 chmod 555 /usr/local/etc/rc.d/rtorrent
