@@ -14,18 +14,7 @@ sysrc -f /etc/rc.conf rtorrent_enable="YES"
 chmod 555 /usr/local/etc/rc.d/rtorrent_flood
 sysrc -f /etc/rc.conf rtorrent_flood_enable="YES"
 
-# Create flood folder
-cd /home/rtorrent || exit 1
-
-# Download sources
-git clone https://github.com/jesec/flood
-cd flood || exit 1
-cp -rf /root/rtorrent/flood/* .
-
-chown -R rtorrent /home/rtorrent
-
-npm install
-npm run build
+npm install --global flood
 
 # Start the service
 service rtorrent start
