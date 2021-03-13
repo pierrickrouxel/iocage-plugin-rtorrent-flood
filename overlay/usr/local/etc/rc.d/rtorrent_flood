@@ -12,10 +12,10 @@ rcvar="rtorrent_flood_enable"
 workdir="/home/rtorrent/flood"
 
 pidfile="${workdir}/rtorrent_flood.pid"
-deamon_log="${workdir}/flood.log"
+daemon_log="${workdir}/flood.log"
 daemon_user="rtorrent_flood"
 command="/usr/sbin/daemon"
-command_args="-o ${deamon_log} -P ${pidfile} -u ${daemon_user} flood"
+command_args="-o ${daemon_log} -P ${pidfile} -u ${daemon_user} flood"
 
 load_rc_config $name
 run_rc_command "$1"
