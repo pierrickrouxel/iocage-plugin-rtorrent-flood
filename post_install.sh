@@ -3,15 +3,11 @@
 pw useradd rtorrent -g 0 -m
 pw useradd rtorrent_flood -g 0 -m
 
-# rTorrent startup script
-chmod 555 /usr/local/etc/rc.d/rtorrent
-sysrc -f /etc/rc.conf rtorrent_enable="YES"
-
-# rTorrent Flood startup script
-chmod 555 /usr/local/etc/rc.d/rtorrent_flood
-sysrc -f /etc/rc.conf rtorrent_flood_enable="YES"
-
 npm install --global flood
+
+# Enable services
+sysrc -f /etc/rc.conf rtorrent_enable="YES"
+sysrc -f /etc/rc.conf rtorrent_flood_enable="YES"
 
 # Start the service
 service rtorrent start
