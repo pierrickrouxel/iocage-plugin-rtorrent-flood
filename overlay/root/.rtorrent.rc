@@ -78,7 +78,7 @@ schedule2 = monitor_diskspace, 15, 60, ((close_low_diskspace, 1000M))
 ##network.http.ssl_verify_host.set = 0
 
 # Some additional values and commands
--method.insert = system.startup_time, value|const, (system.time)
+method.insert = system.startup_time, value|const, (system.time)
 method.insert = d.data_path, simple,\
     "if=(d.is_multi_file),\
         (cat, (d.directory), /),\
