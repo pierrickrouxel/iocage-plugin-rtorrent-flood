@@ -3,7 +3,6 @@
 pw useradd rtorrent -g 0 -m
 pw useradd rtorrent_flood -g 0 -m
 
-mkdir -p /home/rtorrent_flood/flood
 chown rtorrent_flood /home/rtorrent_flood/flood
 
 npm install --global flood
