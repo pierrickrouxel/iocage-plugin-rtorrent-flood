@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# PROVIDE: rtorrent
+# REQUIRE: NETWORK
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="rtorrent"
+desc="rTorrent Daemon"
+rcvar="rtorrent_enable"
+
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+
+rtorrent_start() {
+	su - rtorrent -c "tmux new-session -d -s rtorrent 'nice /usr/local/bin/rtorrent'"
+}
+
+rtorrent_stop() {
+	su - rtorrent -c "tmux send-keys -t rtorrent C-q"
+}
+
+load_rc_config $name
+run_rc_command "$1"
