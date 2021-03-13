@@ -1,10 +1,7 @@
 #!/bin/sh
 
 pw useradd rtorrent -g 0 -m
-
-mv /root/.rtorrent.rc /home/rtorrent/.rtorrent.rc
-
-npm install -g forever
+pw useradd rtorrent_flood -g 0 -m
 
 # rTorrent startup script
 chmod 555 /usr/local/etc/rc.d/rtorrent
