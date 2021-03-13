@@ -3,6 +3,8 @@
 pw useradd rtorrent -g 0 -m
 pw useradd rtorrent_flood -g 0 -m
 
+mkdir -p /home/rtorrent/flood
+
 npm install --global flood
 
 # Enable services
