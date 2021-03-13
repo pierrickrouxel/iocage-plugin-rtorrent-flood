@@ -16,7 +16,9 @@ sysrc -f /etc/rc.conf rtorrent_flood_enable="YES"
 service rtorrent start
 service rtorrent_flood start
 
-echo "Rtorrent socket path: /home/rtorrent/session/rtorrent.sock" > /root/PLUGIN_INFO
+echo "Flood ui credentials" > /root/PLUGIN_INFO
+echo "User: admin" >> /root/PLUGIN_INFO
+echo "Password: admin" >> /root/PLUGIN_INFO
 
 # OpenVPN directory
 mkdir /usr/local/etc/openvpn
