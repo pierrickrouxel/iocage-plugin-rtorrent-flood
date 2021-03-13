@@ -15,7 +15,7 @@ pidfile="${workdir}/rtorrent_flood.pid"
 daemon_log="${workdir}/flood.log"
 daemon_user="rtorrent_flood"
 command="/usr/sbin/daemon"
-command_args="-o ${daemon_log} -P ${pidfile} -u ${daemon_user} flood --rundir ${workdir} --host 0.0.0.0"
+command_args="-o ${daemon_log} -P ${pidfile} -u ${daemon_user} flood --rundir ${workdir} --host 0.0.0.0 --rtsocket /home/rtorrent/session/rtorrent.sock"
 
 load_rc_config $name
 run_rc_command "$1"
