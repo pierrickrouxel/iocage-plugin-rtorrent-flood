@@ -93,7 +93,7 @@ schedule2 = watch_load, 11, 10, ((load.verbose, (cat, (cfg.watch), "load/*.torre
 # (and control via XMLRPC sockets)
 system.daemon.set = true
 network.scgi.open_local = (cat,(session.path),rtorrent.sock)
-execute.nothrow = chmod,770,(cat,(session.path),rtorrent.sock)
+execute.nothrow = chmod,777,(cat,(session.path),rtorrent.sock)
 
 # Logging:
 #   Levels = critical error warn notice info debug
