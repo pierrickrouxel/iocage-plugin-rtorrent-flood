@@ -1,3 +1,9 @@
+# Needs maintainer
+
+> [!IMPORTANT]  
+> I don't use this project anymore, so I can't maintain it.
+> Feel free to open an issue if you want to become a maintainer.
+
 # iocage-plugin-rtorrent-flood
 
 Artifact file(s) for rTorrent Flood iocage plugin.
